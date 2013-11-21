@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block encabezado %}
+	<h1>Actores</h1>	
+{% endblock encabezado %}
+
+
+{% block content %}
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Fecha de nacimiento</th>
+    <th>Filmografia</th>
+  </tr>
+  
+	{% for item in actores  %}
+	<tr>
+		<td>{{item.nombre}}</td>
+		<td>{{item.nacimiento}}</td>
+		<td>
+		{% for pelis in item.peliculas.all %}
+			<p>{{pelis.nombre}}</p>
+		{% endfor %}
+		</td>
+	<tr>
+	{% endfor %}
+
+</table>
+{% endblock content %}

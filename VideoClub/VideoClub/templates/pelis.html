@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block encabezado %}
+	<h1>Peliculas de {{anio}}</h1>
+{% endblock encabezado %}
+
+{% block content %}	
+	{% for peli in pelicula  %}
+		{% if peli.anio == anio %}
+			<li>{{peli.nombre}}</li>
+		{% endif %}
+	{% endfor %}
+	<hr>
+	<h2>Desarrollo de aplicaciones distribuidas</h2>
+	
+{% endblock content %}
